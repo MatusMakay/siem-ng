@@ -76,9 +76,11 @@ cp rootCA.crt ../../../logstash/certs/ca/ca.crt
 cp logstash.key ../../../logstash/certs/logstash/logstash.key
 cp logstash.crt ../../../logstash/certs/logstash/logstash.crt
 
+
+# TODO oneday change to dedicated user in Dockerfile maybe
 chown 1000:1000 ../../../kibana/certs/kibana/kibana.key
 chown 1000:1000 ../../../logstash/certs/logstash/logstash.key
-#chown 1000:1000 ../../../elasticsearch/certs/es01/es01.key      #why does es01 do not need 1000:1000 on es01.key ?? TODO
+chown 1000:1000 ../../../elasticsearch/certs/es01/es01.key
 
 echo "✅ Certificates copied successfully!"
 
